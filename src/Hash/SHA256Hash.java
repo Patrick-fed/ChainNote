@@ -4,11 +4,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.nio.charset.StandardCharsets;
 
-public class MD5Hash {
+public class SHA256Hash {
     public static String gerarHashSHA256(String texto) {
         try {
             // 1. Obtém a instância do algoritmo SHA-256
-            MessageDigest digest = MessageDigest.getInstance("MD5");
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
             // 2. Gera o hash em formato de array de bytes
             byte[] hashBytes = digest.digest(texto.getBytes(StandardCharsets.UTF_8));

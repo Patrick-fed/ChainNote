@@ -1,5 +1,7 @@
 package interfaces;
 
+import model.Bloco;
+
 public interface InsertBlocoRepository {
-    public void insert(Object conteudo,String hashAnterior, String hashAtual);
+    public void insert(Bloco bloco);
 }

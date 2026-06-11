@@ -15,6 +15,14 @@ public class Bloco {
         this.id = id;
     }
 
+    public int getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(int timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
     public Object getConteudo() {
         return conteudo;
     }
