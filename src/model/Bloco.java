@@ -3,6 +3,7 @@ package model;
 public class Bloco {
     private int id;
     private Object conteudo;
+    private int timeStamp;
     private String HashAnterior;
     private String HashBloco;
 

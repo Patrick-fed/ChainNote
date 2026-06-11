@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner;
 
     public static void main(String[] args) {
-        Scanner myObject = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int opcao = 0;
 
-        while (opcao != 0){
-            System.out.println("--- MENU ---");
-            System.out.println("1 - Inserir");
-            System.out.println("2 - Listar");
-            System.out.println("3 - Verificar");
-            System.out.println("4 - (outra ação)");
-            System.out.println("0 - Sair");
-            System.out.print("Escolha uma opção: ");
+        System.out.println("--- MENU ---");
+        System.out.println("1 - Inserir");
+        System.out.println("2 - Listar");
+        System.out.println("3 - Verificar");
+        System.out.println("4 - (outra ação)");
+        System.out.println("0 - Sair");
+        System.out.print("Escolha uma opção: ");
 
-            myObject = scanner;
+        while (opcao != 5){
+
+            opcao = scanner.nextInt();
 
             switch (opcao){
                 case 1:
@@ -28,16 +28,16 @@ public class Main {
                 case 3:
                     System.out.println("Verificar");
                     break;
-                case 0:
+                case 4:
+                    System.out.println("Aqui por via das duvidas.");
+                case 5:
                     break;
                 default:
                     System.out.println("Opção inválida.");
-                    break;
             }
 
-            scanner.close();
         }
-
+        scanner.close();
     }
 
 }
