@@ -11,7 +11,7 @@ public class Main {
         System.out.println("2 - Listar");
         System.out.println("3 - Verificar");
         System.out.println("4 - (outra ação)");
-        System.out.println("0 - Sair");
+        System.out.println("5 - Sair");
         System.out.print("Escolha uma opção: ");
 
         while (opcao != 5){
