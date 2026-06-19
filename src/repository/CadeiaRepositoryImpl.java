@@ -1,4 +1,4 @@
-package Repository;
+package repository;
 
 import interfaces.InsertBlocoRepository;
 import interfaces.ReadBlocoRepository;
