@@ -33,7 +33,7 @@ public class CadeiaRepositoryImpl implements InsertBlocoRepository, ReadBlocoRep
     @Override
     public Bloco buscarPorHash(String hash) {
         for(Bloco bloco: blockchain.getCadeia()){
-            if(bloco.getHashBloco().equals(hash)){
+            if(bloco.getHashAtual().equals(hash)){
                 return bloco;
             }
         }

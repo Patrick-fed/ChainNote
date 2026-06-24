@@ -1,49 +1,42 @@
 package model;
 
+import interfaces.Conteudo;
+
 public class Bloco {
     private int id;
-    private Object conteudo;
-    private int timeStamp;
-    private String HashAnterior;
-    private String HashBloco;
+    private long timeStamp;
+    private Conteudo conteudo;
+    private String hashAnterior;
+    private String hashBloco;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Bloco(int id, long timeStamp, Conteudo conteudo, String hashAnterior) {
         this.id = id;
-    }
-
-    public int getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(int timeStamp) {
         this.timeStamp = timeStamp;
-    }
-
-    public Object getConteudo() {
-        return conteudo;
-    }
-
-    public void setConteudo(Object conteudo) {
         this.conteudo = conteudo;
+        this.hashAnterior = hashAnterior;
     }
 
-    public String getHashAnterior() {
-        return HashAnterior;
+
+    public String obterDadosParaHash() {
+        return id + timeStamp + conteudo.serializarParaHash() + hashAnterior;
     }
 
-    public void setHashAnterior(String hashAnterior) {
-        HashAnterior = hashAnterior;
-    }
+    // Getters e Setters
+    public int getId() { return id; }
+    public long getTimeStamp() { return timeStamp; }
+    public Conteudo getConteudo() { return conteudo; }
 
-    public String getHashBloco() {
-        return HashBloco;
-    }
+    // Set permitindo adulteração (para fins de teste/demonstração)
+    public void setConteudo(Conteudo conteudo) { this.conteudo = conteudo; }
 
-    public void setHashBloco(String hashBloco) {
-        HashBloco = hashBloco;
+    public String getHashAnterior() { return hashAnterior; }
+    public String getHashBloco() { return hashBloco; }
+    public void setHashBloco(String hashBloco) { this.hashBloco = hashBloco; }
+
+    @Override
+    public String toString() {
+        return "Bloco[" + id + "] | Prev: " + (hashAnterior.length() > 8 ? hashAnterior.substring(0,8) + "..." : hashAnterior) +
+                " | Hash: " + (hashBloco.length() > 8 ? hashBloco.substring(0,8) + "..." : hashBloco) +
+                " | Dado: " + conteudo.serializarParaHash();
     }
 }
