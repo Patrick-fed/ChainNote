@@ -1,5 +1,6 @@
 package repository;
 
+import interfaces.Conteudo;
 import interfaces.InsertBlocoRepository;
 import interfaces.ReadBlocoRepository;
 import model.Bloco;
@@ -16,7 +17,7 @@ public class CadeiaRepositoryImpl implements InsertBlocoRepository, ReadBlocoRep
 
     @Override
     public void insert(Bloco bloco) {
-        blockchain.adicionarBloco(bloco);
+        blockchain.adicionarBloco((Conteudo) bloco);
         System.out.println("Bloco ID " + bloco.getId() + " inserido na cadeia com sucesso!");
     }
 
@@ -33,7 +34,7 @@ public class CadeiaRepositoryImpl implements InsertBlocoRepository, ReadBlocoRep
     @Override
     public Bloco buscarPorHash(String hash) {
         for(Bloco bloco: blockchain.getCadeia()){
-            if(bloco.getHashAtual().equals(hash)){
+            if(bloco.getHashBloco().equals(hash)){
                 return bloco;
             }
         }

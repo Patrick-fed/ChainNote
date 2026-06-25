@@ -28,6 +28,14 @@ public class Cadeia {
         cadeia.add(novoBloco);
     }
 
+    public List<Bloco> getCadeia() {
+        return cadeia;
+    }
+
+    public void setCadeia(List<Bloco> cadeia) {
+        this.cadeia = cadeia;
+    }
+
     public List<Bloco> getBlocos() { return cadeia; }
 
     public Bloco getUltimoBloco() {

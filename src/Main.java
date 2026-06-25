@@ -15,8 +15,8 @@ public class Main {
 
 
         //CalculadoraHash md5 = new MD5Hash();
-        //Cadeia chainNot = new Cadeia(md5);
-        //ValidacaoCadeia validarMd5 = new ValidacaoCadeia(md5);
+        //Cadeia chainNote = new Cadeia(md5);
+        //ValidacaoCadeia validador = new ValidacaoCadeia(md5);
 
         CalculadoraHash sha256 = new SHA256Hash();
         Cadeia chainNote = new Cadeia(sha256);
