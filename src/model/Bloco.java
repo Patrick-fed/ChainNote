@@ -26,17 +26,11 @@ public class Bloco {
     public long getTimeStamp() { return timeStamp; }
     public Conteudo getConteudo() { return conteudo; }
 
-    // Set permitindo adulteração (para fins de teste/demonstração)
+
     public void setConteudo(Conteudo conteudo) { this.conteudo = conteudo; }
 
     public String getHashAnterior() { return hashAnterior; }
     public String getHashBloco() { return hashBloco; }
     public void setHashBloco(String hashBloco) { this.hashBloco = hashBloco; }
 
-    @Override
-    public String toString() {
-        return "Bloco[" + id + "] | Prev: " + (hashAnterior.length() > 8 ? hashAnterior.substring(0,8) + "..." : hashAnterior) +
-                " | Hash: " + (hashBloco.length() > 8 ? hashBloco.substring(0,8) + "..." : hashBloco) +
-                " | Dado: " + conteudo.serializarParaHash();
-    }
 }
