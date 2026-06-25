@@ -24,7 +24,7 @@ public class Main {
 
 
         chainNote.adicionarBloco(new ConteudoTexto("Bloco Genesis"));
-        chainNote.adicionarBloco(new ConteudoTransacao("Alice", "Bob", 50.0));
+        //chainNote.adicionarBloco(new ConteudoTransacao("Alice", "Bob", 50.0));
 
         int opcao = 0;
         while (opcao != 5) {
@@ -67,6 +67,7 @@ public class Main {
                         System.out.println("\n[Ataque] Adulterando o Bloco escolhido...");
                         Bloco alvo = chainNote.getBlocos().get(1);
                         alvo.setConteudo(new ConteudoTransacao("Alice", "Hacker", 9999.0));
+                        //alvo.setConteudo(new ConteudoTexto("Perdeu playboy"));
                         System.out.println("Dado alterado na memória! Execute a opção 3 para validar.");
                     } else {
                         System.out.println("Adicione mais blocos antes de simular o ataque.");
